@@ -1,0 +1,45 @@
+.caja {
+    width: 90vw;
+    height: 400px;
+    background-color: #E0B0FF;
+    margin-left: 5vw;
+    display: flex;
+    margin-bottom: 80px ;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.item {
+    min-width: 140px;
+    height: 70px;
+    background-color: #FFF0C9;
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+:nth-child(1 of .caja) {
+    flex-wrap: nowrap;
+}
+
+:nth-child(2 of .caja) {
+    flex-wrap: wrap;
+}
+
+:nth-child(3 of .caja) {
+    flex-wrap: wrap-reverse;
+}
+
+:nth-child(4 of .caja) {
+    flex-wrap: wrap-reverse;
+    align-items: start;
+    justify-content: center;
+}
+
+:nth-child(5 of .caja) {
+    align-items: stretch;
+}
