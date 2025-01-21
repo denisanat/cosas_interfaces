@@ -1,0 +1,32 @@
+:root {
+	--padin: 1em;
+}
+
+.container {
+	border: 2px dashed red;
+	padding: var(--padin);
+}
+
+.caja , .caja2 {
+	background-color: red;
+	width: 80px;
+	height: 40px;
+	border-radius: 5px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition-duration: 2s;
+}
+
+.container:hover .caja{
+	background-color: purple;
+	transform: translate(900px);
+	transition-duration: 5s;
+}
+
+.container:hover .caja2{
+	background-color: cyan;
+	transform: translate( calc(100vw - 100% - var(--padin)) );
+	transition-duration: 5s;
+}

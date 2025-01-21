@@ -1,0 +1,27 @@
+.cubito {
+	height: 50px;
+	width: 50px;
+	background-color: red;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	animation: movimiento 5s infinite;
+}
+
+@keyframes movimiento {
+	0% {
+		transform: translateY(0vh);
+	}
+
+	25% {
+		transform: translateX(calc(100vw - 100%));
+	}
+
+	50% {
+		transform: translate(calc(100vw - 100%), calc(100vh - 100%));
+	}
+
+	75% {
+		transform: translateY(calc(100vh - 100%));
+	}
+}

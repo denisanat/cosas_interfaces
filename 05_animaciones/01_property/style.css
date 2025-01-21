@@ -1,0 +1,34 @@
+#contenedor {
+	background-color: gray;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+	justify-content: center;
+}
+
+.caja {
+	background-color: red;
+	height: 300px;
+	width: 300px;
+	margin: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	color: white;
+	transition-duration: 0s;
+}
+
+.sintransformacion:hover {
+	background-color: pink;
+	color: black;
+	height: 600px;
+}
+
+.contransformacion:hover {
+	background-color: pink;
+	transition-duration 1s;
+	transform: translate(0, 150px) scale(1, 2);
+
+	border: 3px solid blue;
+}

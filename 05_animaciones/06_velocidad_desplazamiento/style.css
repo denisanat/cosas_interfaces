@@ -1,0 +1,12 @@
+.item {
+	width: 100px;
+	height: 2em;
+	background-color: lightblue;
+	border-radius: 3px;
+	margin: 10px;
+}
+
+.container:hover :nth-child(1 of .item) {
+	transform: translate(100px);
+	transition-duration: 5s;
+}
