@@ -1,5 +1,7 @@
 const ctx = document.getElementById("tutorial").getContext("2d");
 
+let figuraMovida;
+
 const figuras = [
 	{
 		posX: 600,
@@ -53,47 +55,40 @@ const figuras = [
 	},
 ];
 
-let ratonDownX, ratonDownY, ratonUpX, ratonUpY;
+const rFiguras = [...figuras].reverse();
+
+let ratonX, ratonY;
 
 document.getElementById("tutorial").addEventListener("mousedown", (event) => {
-	ratonDownX = event.pageX - 107;
-	ratonDownY = event.pageY - 30;
+	ratonX = event.pageX - 107;
+	ratonY = event.pageY - 30;
 
 	figuras.forEach((fig) => {
 		if (
-			ratonDownX > fig.posX &&
-			ratonDownX < fig.posX + fig.lenX &&
-			ratonDownY > fig.posY &&
-			ratonDownY < fig.posY + fig.lenY
+			ratonX > fig.posX &&
+			ratonX < fig.posX + fig.lenX &&
+			ratonY > fig.posY &&
+			ratonY < fig.posY + fig.lenY
 		) {
-			fig.moviendo = true;
-			fig.desRatonX = ratonDownX - fig.posX;
-			fig.desRatonY = ratonDownY - fig.posY;
+			figuraMovida = fig;
+			fig.desRatonX = ratonX - fig.posX;
+			fig.desRatonY = ratonY - fig.posY;
 		}
 	});
 });
 
 document.getElementById("tutorial").addEventListener("mousemove", (event) => {
-	ratonDownX = event.pageX - 107;
-	ratonDownY = event.pageY - 30;
+	ratonX = event.pageX - 107;
+	ratonY = event.pageY - 30;
 
-	figuras.forEach((fig) => {
-		if (fig.moviendo) {
-			fig.posX = ratonDownX - fig.desRatonX;
-			fig.posY = ratonDownY - fig.desRatonY;
-		}
-	});
+	if (figuraMovida != null) {
+		figuraMovida.posX = ratonX - figuraMovida.desRatonX;
+		figuraMovida.posY = ratonY - figuraMovida.desRatonY;
+	}
 });
 
-document.getElementById("tutorial").addEventListener("mouseup", (event) => {
-	ratonUpX = event.pageX - 107;
-	ratonUpY = event.pageY - 30;
-
-	figuras.forEach((fig) => {
-		fig.moviendo = false;
-		fig.posX += ratonUpX - ratonDownX;
-		fig.posY += ratonUpY - ratonDownY;
-	});
+document.getElementById("tutorial").addEventListener("mouseup", () => {
+	figuraMovida = null;
 });
 
 function dibujar() {
