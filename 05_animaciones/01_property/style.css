@@ -27,8 +27,6 @@
 
 .contransformacion:hover {
 	background-color: pink;
-	transition-duration 1s;
+	transition-duration: 1s;
 	transform: translate(0, 150px) scale(1, 2);
-
-	border: 3px solid blue;
 }

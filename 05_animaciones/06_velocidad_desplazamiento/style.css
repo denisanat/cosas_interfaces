@@ -1,12 +1,46 @@
 .item {
-	width: 100px;
-	height: 2em;
+	width: 130px;
+	height: 3em;
 	background-color: lightblue;
-	border-radius: 3px;
+	border-radius: 5px;
 	margin: 10px;
 }
 
-.container:hover :nth-child(1 of .item) {
+/* :nth-child(1 of .item):hover :nth-child(1 of .item) {
 	transform: translate(100px);
 	transition-duration: 5s;
+	transition-timing-function: linear;
+} */
+
+.item {
+	transition-duration: 5s;
+}
+
+.caja:hover :nth-child(1 of .container) > div {
+	transform: translate(calc(100vw - 160px));
+	transition-timing-function: linear;
+}
+
+.caja:hover :nth-child(2 of .container) > div {
+	transform: translate(calc(100vw - 160px));
+}
+
+.caja:hover :nth-child(3 of .container) > div {
+	transform: translate(calc(100vw - 160px));
+	transition-timing-function: steps(5, end);
+}
+
+.caja:hover :nth-child(4 of .container) > div {
+	transform: translate(calc(100vw - 160px));
+	transition-timing-function: cubic-bezier(1, 0, 1, 1);
+}
+
+.caja:hover :nth-child(5 of .container) > div {
+	transform: translate(calc(100vw - 160px));
+	transition-timing-function: cubic-bezier(0, 1, 1, 0.98);
+}
+
+.caja:hover :nth-child(6 of .container) > div {
+	transform: translate(calc(100vw - 160px));
+	transition-timing-function: cubic-bezier(0.63, -0.58, 1, 1);
 }
