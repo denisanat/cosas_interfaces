@@ -9,5 +9,14 @@ document.getElementById("boton").addEventListener("click", () => {
 
 		ctx.fillStyle = "rgba(0, 0, 255, 0.5)";
 		ctx.fillRect(200, 200, 200, 200);
+
+		ctx.beginPath();
+    	ctx.arc(1000, 400, 50, 0, Math.PI * 2, true);
+		ctx.fillStyle = "red";
+		ctx.fill();
+
+		ctx.beginPath();
+    	ctx.arc(1000, 600, 50, 0, Math.PI * 2, true);
+		ctx.stroke();
 	}
 });
